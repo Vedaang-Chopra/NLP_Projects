@@ -1,0 +1,16 @@
+This the installion guide for Industrial chatbot running in local system.
+==================================================
+
+Required tool and libraries:
+1. Anaconda3(64-bit) with jupyter installed in it
+2. nltk and tkinter libraries should be pre installed.
+    Instructions to install libraries before the run if above libraries are not installed:
+        ! pip install --upgrade category_encoders
+        !python -m nltk.downloader stopwords
+        !python -m nltk.downloader punkt
+
+
+===================================================
+1. Open 'Chatbot gui.ipynb' in jupyter notebook or 'Chatbot gui.py' in spyder.
+2. Run all the cells and a chatbot window will popup.
+3. Valid input should be given in the format as given in the dataset. Any invalid input with throw callback error.

@@ -87,6 +87,7 @@ You are provided with URLs linking to PDFs and their corresponding categories, w
      - Needs to be tested in a real production environment.
 
 4. **Model Performance Report**  
+   - Since this is a classification problem on a balanced dataset, using accuracy, precision, recall, f-1 score and confusion matrix, can help us thourgoughly understand the workings of the model trained.
    - **Test Accuracy:** 0.95  
    - **Classification Report:**
      ```

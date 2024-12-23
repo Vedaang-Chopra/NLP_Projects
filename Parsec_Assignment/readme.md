@@ -28,7 +28,7 @@ You are provided with URLs linking to PDFs and their corresponding categories, w
 - Clearly outlines **project goals, data, and deliverables**.  
 - Provides **step-by-step instructions** on running and testing the project.  
 - Structured with appropriate **markdown headings and sections** for readability.  
-
+---
 
 ## 🗂️ Data Description
 
@@ -37,12 +37,6 @@ You are provided with URLs linking to PDFs and their corresponding categories, w
 - **Columns:**
   - `datasheet_link` – URL to the hosted PDF.
   - `target_col` – The target category (Lighting, Fuses, Cables, Others).  
-
-<!-- ### Test Data
-- **Sheet Name:** `test_data`  
-- **Columns:**
-  - `datasheet_link` – URL to the hosted PDF.
-  - `target_col` – The target category of the PDF. -->
 
 ---
 
@@ -62,7 +56,7 @@ You are provided with URLs linking to PDFs and their corresponding categories, w
 ### 3. Inference Pipeline
 - Create an inference function that accepts a PDF URL as input and returns:  
   - **Predicted Class** – One of [Lighting, Fuses, Cables, Others].  
-  - **Class Probabilities**  
+  - **Class Probabilities**  - > Shared the confidence of the majority class
 
 ### 4. Model Evaluation and Testing
 - Make predictions on the test dataset.  
@@ -72,18 +66,48 @@ You are provided with URLs linking to PDFs and their corresponding categories, w
 
 ## 📦 Deliverables
 
-1. **Code** – Full codebase for PDF extraction, model training, and inference.  
-2. **Inference Pipeline** – A Python function or hosted app for classifying PDFs from URLs.  
+1. **Code**  
+   - `build_dataset_v2.ipynb` – Implements the data collection and PDF extraction to build the raw dataset
+   - `eda_cleaning.ipynb` – Implements the exploratory data analysis, text preprocessing and splitting data to training and testing.  
+   - `ml_modelling.ipynb` – Implemented bag of words technique and used ML models to perform classification.
+   - `dl_modelling.ipynb` – Implemented Glove Embedding and LSTM based classification technique to perform classification.
+   - `inference.ipynb` – Contains the inference pipeline to classify PDFs from URLs.  
+   
+2. **Inference Pipeline**  
+   - The inference logic is implemented in `inference.ipynb`.
+
 3. **Documentation**  
-   - Solution walkthrough (Explain architecture, models, and performance).  
-   - Time taken to solve the problem.  
-   - Model choice explanation.  
-   - Shortcomings and potential improvements.  
+   - Detailed walkthrough of the solution, including architecture and model choice.  
+   - Time taken to complete the problem: **6-9 hours**.  
+   - **Model Chosen:** Multiple like TF-IDF with Random Forest or Glove embedding with LSTM for simplicity and interpretability. Used text classification by extracting text from PDF and classifying it.
+   - **Shortcomings:**  
+     - Excluded HTML files, processed only PDFs.  
+     - Requires further review to ensure no overlooked data.  
+     - PDF extraction might need refinement for edge cases.  
+     - Needs to be tested in a real production environment.
+
 4. **Model Performance Report**  
-   - Performance metrics (Accuracy, Precision, Recall, F1-Score).  
-   - Justification for the choice of metrics.
+   - **Test Accuracy:** 0.95  
+   - **Classification Report:**
+     ```
+                 precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97        90
+           1       0.97      1.00      0.99       113
+           2       0.94      0.84      0.89        61
+           3       0.89      0.92      0.90        85
+      ```
+    
+    ```
+    
+    accuracy                               0.95       349
+    macro avg          0.94      0.93      0.94       349
+    weighted avg       0.95      0.95      0.94       349
+    ```
+
 
 ---
+
 
 ## 🚀 How to Run the Project
 
@@ -97,16 +121,14 @@ conda activate parspec_pdf_classification
 pip install -r requirements.txtx
 ```
 
-## 2. Training the Model
+## 2. Training the Model 
 ```bash
-
-python train_model.py
+    python  Run the ml_modelling or dl_modelling.ipynb
 ```
-
 
 ## 3. Inference
 ```bash
-python inference.py --url https://example.com/sample.pdf
+python inference.ipynb
 ```
 ---
 

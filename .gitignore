@@ -40,3 +40,4 @@ build/
 
 # Dataset Files
 Parsec_Assignment/dataset/modified_*
+Parsec_Assignment/code_base/.vector_cache/

@@ -39,4 +39,4 @@ build/
 
 
 # Dataset Files
-Parsec_Assignment/dataset/*
+Parsec_Assignment/dataset/modified_*

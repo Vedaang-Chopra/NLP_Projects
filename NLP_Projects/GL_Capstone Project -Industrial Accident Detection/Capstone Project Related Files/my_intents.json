@@ -1,0 +1,204 @@
+{
+   "intents":[
+      {
+         "responses":[
+            "Good to see you again, how can I help?",
+            "Hi there, how can I help?"
+         ],
+         "tag":"greeting",
+         "patterns":[
+            
+         ],
+         "nextTag":"options"
+      },
+      {
+         "responses":[
+            "I can guide you through reporting industrial_accidents",
+            "Offering support for industrial_accident reporting"
+         ],
+         "tag":"options",
+         "patterns":[
+            "How you could help me?",
+            "What you can do?",
+            "What help you provide?",
+            "How you can be helpful?",
+            "What support is offered"
+         ],
+         "nextTag":"accident report"
+      },
+      {
+         "responses":[
+            "Would you like to report an incident?"
+         ],
+         "tag":"accident report",
+         "patterns":[
+            "How to report an accident?",
+            "Need to report an accident"
+         ],
+         "nextTag":"Initialize Accident scenario"
+      },
+      {
+         "responses":[
+            "Thanks for reporting. \nPlease enter the detailed description of the incident."
+         ],
+         "tag":"Initialize Accident scenario",
+         "patterns":[
+            
+         ],
+         "nextTag":"Description"
+      },
+      {
+         "responses":[
+            "This should be good. \nCan you please mention the critical risk/cause which you can highlight in one word?\nExample: Electrical Shock/Burn"
+         ],
+         "tag":"Description",
+         "patterns":[
+            "Employee was sitting in the resting area at level 326 (raise bore), when he suffered sudden illness, falling and suffering excoriation on the face.",
+            "While preparing the rice for the lunch of the day, when moving the pot # 60 - 35 Kg of weight including the contents - to evacuate the residual water of the cooking of the rice, when positioning the pot on a jaba it tilts backwards spilling some 200 ml of hot water on the cook's leg. The cook immediately after the event applies first aid, pouring cold water on the area of â€‹â€‹the injury and go to the medical post for evaluation."
+         ],
+         "nextTag":"CriticalRisk"
+      },
+      {
+         "responses":[
+            "Please mention the date of occurance in YYYY-MM-DD format"
+         ],
+         "tag":"CriticalRisk",
+         "patterns":[
+            "Bees",
+            "Electrical Shock",
+            "Chemical substances",
+            "Liquid Metal",
+            "Burn",
+            "Electrical installation",
+            "Others"
+         ],
+         "nextTag":"IncidentDate"
+      },
+      {
+         "responses":[
+            "Country in which the accident had occurred:"
+         ],
+         "tag":"IncidentDate",
+         "patterns":[
+            "10-01-2016  12:00:00 AM",
+            "17-01-2016"
+         ],
+         "nextTag":"CountryName"
+      },
+      {
+         "responses":[
+            "Location of the incident:"
+         ],
+         "tag":"CountryName",
+         "patterns":[
+            "Country_01",
+            "Country_02",
+            "Country_03"
+         ],
+         "nextTag":"Location"
+      },
+      {
+         "responses":[
+            "Which industrial sector the plant belongs to?"
+         ],
+         "tag":"Location",
+         "patterns":[
+            "Local_01",
+            "Local_02",
+            "Local_03"
+         ],
+         "nextTag":"IndustrialSector"
+      },
+      {
+         "responses":[
+            "Alright! Now please provide details with injured person:\nGender of the employee:"
+         ],
+         "tag":"IndustrialSector",
+         "patterns":[
+            "Mining",
+            "Metals",
+            "Others"
+         ],
+         "nextTag":"Gender"
+      },
+      {
+         "responses":[
+            "Employment type:(Employee / Third party / Third party (Remote))"
+         ],
+         "tag":"Gender",
+         "patterns":[
+            "Male",
+            "Female"
+         ],
+         "nextTag":"Employment Type"
+      },
+      {
+         "responses":[
+            "Potential accident level (I- Minor, VI - Severe):"
+         ],
+         "tag":"Employment Type",
+         "patterns":[
+            "Employee",
+            "Third party",
+            "Third party (Remote)"
+         ],
+         "nextTag":"Potential Accident Level"
+      },
+      {
+         "responses":[
+            "Thank you for the Information.\n\n Level of the accident is: "
+         ],
+         "tag":"Potential Accident Level",
+         "patterns":[
+            "I",
+            "III",
+            "VI"
+         ],
+         "nextTag":"goodbye"
+      },
+      {
+         "responses":[
+            "See you!",
+            "Have a nice day",
+            "Bye!"
+         ],
+         "tag":"goodbye",
+         "patterns":[
+            "Bye",
+            "See you later",
+            "Goodbye",
+            "Nice chatting to you, bye",
+            "Till next time"
+         ],
+         "nextTag":"thanks"
+      },
+      {
+         "responses":[
+            "Happy to help!",
+            "Any time!",
+            "My pleasure"
+         ],
+         "tag":"thanks",
+         "patterns":[
+            "Thanks",
+            "Thank you",
+            "That's helpful",
+            "Awesome, thanks",
+            "Thanks for helping me"
+         ],
+         "nextTag":"End of the conversation"
+      },
+      {
+         "responses":[
+            "Sorry, can't understand you",
+            "Please give me more info",
+            "Not sure I understand"
+         ],
+         "tag":"noanswer",
+         "patterns":[
+            
+         ],
+         "nextTag":"End of the conversation"
+      }
+   ]
+}
